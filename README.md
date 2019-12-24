@@ -1,17 +1,15 @@
-README
-
-# Series Introduction
+## Series Introduction
 
 This opens a series of articles using smart thermostat data from my home to seek a data-driven understanding of home energy performance and control.  While the Nest devices seem to be the best-known smart thermostats, my home is installed with two [ecobee4](https://www.ecobee.com/ecobee4/) thermostats, each controlling a separate HVAC system (one system for upstairs and one for downstairs, in a 1700-ft<sup>2</sup> townhouse in Austin, TX).  
 
 At the end of this article, I'll introduce the data available from the ecobee devices and the kinds of questions to be investigated.  
 
 * INSERT HERE:  why this analysis?  What will be enabled?  i.e., use cases
- 
+
 However, most of this initial article discusses the alternative to a data-driven study:  traditional energy-balance analysis [BETTER TERM]?  As the data-driven analysis is developed and assessed, we'll compare the two approaches on ease of use, power of results, and general applicability.  
 
-# Traditional Building Energy Analysis
-## Modes of heat transfer
+## Traditional Building Energy Analysis
+### Modes of heat transfer
 * Conduction, i.e, heat exchanged with the ground under the house
 * Convection
     * Between walls/roof and moving air
@@ -44,8 +42,8 @@ Complications (beyond a simple box at equilibrium):
 * Effects of varying humidity and its effect on comfort
 * Building construction (e.g., wall framing and cavities, attic spaces, interior room configurations)
 
-## Simulation
-In practice, a professional energy engineer would more typically employ Building Energy Simulation software such as [eQuest](http://www.doe2.com/equest/) or DOE2.  These programs have been developed over many users by government, academic, and industry researchers to represent the building as a set of physical and mechanical components (e.g., walls, roof, room layouts, HVAC systems including ducts, coolant loops, fans, steam or hot water loops) and their dimensions, materials, and physical properties.  Extensive sets of templates are available to represent standard types of construction and materials.  eQuest models are built through a graphical interface, while DOE2 is essentially text-based modeling language.The software supplies enormous capabilities to the modeler in handling many of the complications described above, including solar and weather profiles by location and date (including variability), all the heat transfer modeling between different physical components and spaces, period-by-period dependencies, and computing extensive data and statistics on energy-related quantities of interest (heat gains and losses per surface per period, overall energy usage, interior temperatures, etc.).However, "garbage in, garbage out" still applies.  If the building model designed in the simulation doesn't reflect the building's true construction and usage, the simulation outputs won't reflect the actual conditions that can be expected over time.  
+### Simulation
+In practice, a professional energy engineer would more typically employ Building Energy Simulation software such as [eQuest](http://www.doe2.com/equest/) or DOE2.  These programs have been developed over many users by government, academic, and industry researchers to represent the building as a set of physical and mechanical components (e.g., walls, roof, room layouts, HVAC systems including ducts, coolant loops, fans, steam or hot water loops) and their dimensions, materials, and physical properties.  Extensive sets of templates are available to represent standard types of construction and materials.  eQuest models are built through a graphical interface, while DOE2 is essentially text-based modeling language.  The software supplies enormous capabilities to the modeler in handling many of the complications described above, including solar and weather profiles by location and date (including variability), all the heat transfer modeling between different physical components and spaces, period-by-period dependencies, and computing extensive data and statistics on energy-related quantities of interest (heat gains and losses per surface per period, overall energy usage, interior temperatures, etc.).However, "garbage in, garbage out" still applies.  If the building model designed in the simulation doesn't reflect the building's true construction and usage, the simulation outputs won't reflect the actual conditions that can be expected over time.  
 
 Specific difficulties include
 * For an existing building:
@@ -57,8 +55,16 @@ Specific difficulties include
 	* Buildings are often not built exactly as designed, and the building as built may perform quite differently from the building as designed
 		* This is especially true for leakage
 
-# The alternative:  data-driven modeling
+## The alternative:  data-driven modeling
 The primary data available for download from the account for an ecobee thermostat looks like:
+
+| Date       | Time     | System Setting | System Mode            | Program Mode | Cool Set Temp (F) | Heat Set Temp (F) | Current Temp (F) | Current Humidity (%RH) | Outdoor Temp (F) | Cool Stage 1 (sec) | Heat Stage 1 (sec) | Fan (sec) | Thermostat Temperature (F) | Thermostat Humidity (%RH) |
+| ---------- | -------- | -------------- | ---------------------- | ------------ | ----------------- | ----------------- | ---------------- | ---------------------- | ---------------- | ------------------ | ------------------ | --------- | -------------------------- | ------------------------- |
+| 2018-10-01 | 11:30:00 | cool           | compressorCoolOff      | Away         | 82                | 64                | 76.4             | 59                     | 76.9             | 0                  | 0                  | 0         | 76.4                       | 59                        |
+| 2018-10-01 | 11:35:00 | cool           | compressorCoolOff      | Away         | 80.5              | 65.7              | 76.4             | 59                     | 76.9             | 0                  | 0                  | 0         | 76.4                       | 59                        |
+| 2018-10-01 | 11:40:00 | cool           | compressorCoolOff      | Away         | 76                | 71                | 76.4             | 59                     | 76.9             | 30                 | 0                  | 30        | 76.4                       | 59                        |
+| 2018-10-01 | 11:45:00 | cool           | compressorCoolStage1On | Away         | 76                | 71                | 76.4             | 58                     | 76.9             | 300                | 0                  | 300       | 76.4                       | 58                        |
+| 2018-10-01 | 11:50:00 | cool           | compressorCoolStage1On | Away         | 76                | 71                | 76.1             | 55                     | 76.9             | 150                | 0                  | 195       | 76                         | 55                        |
 
 ![sample_ecobee_data](./images/sample_ecobee_data.png)
 
