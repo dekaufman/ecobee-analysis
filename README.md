@@ -66,8 +66,6 @@ The primary data available for download from the account for an ecobee thermosta
 | 2018-10-01 | 11:45:00 | cool           | compressorCoolStage1On | Away         | 76                | 71                | 76.4             | 58                     | 76.9             | 300                | 0                  | 300       | 76.4                       | 58                        |
 | 2018-10-01 | 11:50:00 | cool           | compressorCoolStage1On | Away         | 76                | 71                | 76.1             | 55                     | 76.9             | 150                | 0                  | 195       | 76                         | 55                        |
 
-![sample_ecobee_data](./images/sample_ecobee_data.png)
-
 For each five-minute period, we know:
 * how many seconds of heating or cooling runtime took place
 * the thermostat setpoint for whichever mode (heating or cooling) may be in operation
