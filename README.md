@@ -1,4 +1,4 @@
-Series Introduction
+README
 
 # Series Introduction
 
@@ -59,6 +59,9 @@ Specific difficulties include
 
 # The alternative:  data-driven modeling
 The primary data available for download from the account for an ecobee thermostat looks like:
+
+
+![sample_ecobee_data](./images/sample_ecobee_data.png)
 
 
 ![c0cfa985b12f74decbe280a196c27dee.png](../_resources/d15a2efaafd549a294e637e2d231e8fe.png)
