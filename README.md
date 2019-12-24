@@ -66,7 +66,7 @@ The primary data available for download from the account for an ecobee thermosta
 
 ![c0cfa985b12f74decbe280a196c27dee.png](../_resources/d15a2efaafd549a294e637e2d231e8fe.png)
 
-![image3](https://github.com/dekaufman/ecobee-analysis/blob/master/_resources/d15a2efaafd549a294e637e2d231e8fe.png)
+![image3](https://github.com/dekaufman/ecobee-analysis/blob/master/images/sample_ecobee_data.png)
 
 
 For each five-minute period, we know:
