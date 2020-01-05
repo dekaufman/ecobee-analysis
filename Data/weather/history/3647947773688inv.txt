@@ -1,0 +1,5 @@
+722544 13958 AUSTIN-CAMP MABRY              2018  929 1155 1032  907 1033 1071  950  931 1189 1096    0    0
+
+
+Total Surface Hourly Observations Available: 10293
+Total Station-Years: 1

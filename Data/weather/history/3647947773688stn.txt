@@ -1,0 +1,3 @@
+USAF-WBAN_ID STATION NAME                   COUNTRY                                            STATE 			      LATITUDE LONGITUDE ELEVATION
+------------ ------------------------------ -------------------------------------------------- ------------------------------ -------- --------- ---------
+722544 13958 AUSTIN-CAMP MABRY              UNITED STATES                                      TEXAS                           +30.321  -097.760   +0204.2
